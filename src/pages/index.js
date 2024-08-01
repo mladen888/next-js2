@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
+import React from "react";
 
 export async function getServerSideProps() {
   const res = await fetch('https://pokeapi.co/api/v2/pokemon/')
@@ -18,7 +19,7 @@ export default function Home({pokemoni}) {
       </Head>
       <main>
         <h1>Gen 1 Pokemon</h1>
-
+      
         <div>{pokemoni.map((singlePokemon, index)=>{
           return(
             <div key={index}>
